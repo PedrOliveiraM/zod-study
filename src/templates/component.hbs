@@ -1,0 +1,19 @@
+import React from 'react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { schema } from './{{name}}.schema';
+import { z } from 'zod';
+
+export function {{name}}() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<z.infer<typeof schema>>({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = (data) => console.log(data);
+
+  return <></>;
+}
