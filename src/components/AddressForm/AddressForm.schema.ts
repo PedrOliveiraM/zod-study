@@ -7,4 +7,11 @@ export const schema = z.object({
   // - Ter um bairro
   // - Ter uma cidade
   // - Ter um estado
+  address: z.object({
+    cep: z.string().max(9).regex(/^\d{5}-?\d{3}$/),
+    street: z.string(),
+    neighborhood: z.string(),
+    city: z.string(),
+    state: z.string()
+  })
 });
